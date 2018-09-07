@@ -1,0 +1,109 @@
+.navbar {
+    border-radius: 0;
+}
+
+#login-header {
+    margin-bottom: 0;
+}
+
+.article .a-title {
+    font-family: 'MuseoSansCyr', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.article {
+    margin-bottom: 2em;    
+    border-bottom: 1px solid #e5e5e5;
+}
+
+h2 {
+    font-size: 2.3em;
+    line-height: 1.125;
+    margin: 0 0 0.375em 0;
+    font-weight: normal;
+}
+
+.a-info {
+    margin-bottom: 0.5em;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.85em;
+    color: #888;
+}
+
+.a-content {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.a-footer {
+    margin-top: 3em;
+    margin-bottom: 2em;
+    font-size: 1.2em;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #888;
+}
+
+.a-footer .comments {
+     display:inline-block; 
+    text-align: left;
+
+}
+.a-footer .editing {
+    display:inline-block;
+    text-align:right;
+}
+
+.add_article {
+    padding-bottom: 1em;
+    margin-bottom: 1em;    
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.add_user {
+    padding-bottom: 1em;
+    margin-bottom: 1em;    
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#operations {
+    margin-top: 20px;
+    text-align:center;
+}
+
+/* Errors */
+
+.errors {
+  display: inline-block;
+  border: 2px solid red;
+  color: grey;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.errors ul {
+  margin-bottom: 0;
+  padding-left: 1em;
+}
+
+/* Session Messages */
+
+#message {
+  color: #0B61A5;
+  background: white;
+  border: 2px solid #0B61A5;
+  padding: 1em 15px;
+  margin: 1em 30px;
+  width: 890px;
+}
+
+.intro-header {
+    background-image: url('../img/matrix-bg.jpg');
+    min-height: 500px;
+    margin-top: 0;
+    padding-top: 0;
+    color:white;
+}
+
+.visible .show {
+    font-weight: bold;
+}
+
