@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-07 08:11:02
+/* Smarty version 3.1.32, created on 2018-09-07 08:56:41
   from 'c:\winnmp\www\albion\public\tpls\public\fame_farm.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9232960e4c41_26884024',
+  'unifunc' => 'content_5b923d4933ab98_35171330',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e08f4cb48d96f050ed3cfe8d3392e585a08e9468' => 
     array (
       0 => 'c:\\winnmp\\www\\albion\\public\\tpls\\public\\fame_farm.tpl',
-      1 => 1536250783,
+      1 => 1536310598,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9232960e4c41_26884024 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b923d4933ab98_35171330 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="main">
     <div class="content container">
         <div class="row">
@@ -42,7 +42,7 @@ function content_5b9232960e4c41_26884024 (Smarty_Internal_Template $_smarty_tpl)
             <th>Фейм </th>
             <th>Время </th>
             <th>Продолжительность, мин </th>
-            <th>Фейм за период </th>
+            <th>Фейма набито </th>
             <th>Фейм в час </th>
           </tr>
     <?php

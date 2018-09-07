@@ -13,7 +13,7 @@
             <th>id</th>
             <th>Логин(почта)</th>
             <th>Дата регистрации</th>
-            <th>Имя </th>
+            <th>Никнейм </th>
             <th>Фамилия</th>
             <th>Удален</th>
             <th>Редактировать</th>
@@ -23,7 +23,7 @@
             <td>{$user.id}</td>
             <td>{$user.email}</td>
             <td>{$user.reg_date}</td>
-            <td>{$user.first_name}</td>
+            <td>{$user.nickname}</td>
             <td>{$user.last_name}</td>
             <td>{$user.deleted}</td>
             <td><a href="edit_user.php?id={$user.id}">Ред</a></td>

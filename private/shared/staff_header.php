@@ -25,7 +25,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                             </button>
-                        
+
                     </div>
                        <!-- navbar header  -->
                        <div class="collapse navbar-collapse" id="collapse">

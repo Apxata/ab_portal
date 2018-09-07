@@ -13,7 +13,7 @@
         if($result == true) {
             $new_id = $user->id;
             $_SESSION['message'] = 'Новый пользователь успешно добавлен';
-            redirect_to(root_path('/staff/users/articles.php'));
+            redirect_to(root_path('/staff/users/index.php'));
             
         } else {
                 // ошибка

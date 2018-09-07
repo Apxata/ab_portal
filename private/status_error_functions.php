@@ -4,9 +4,19 @@ function login_required() {
     if(!$session->is_logged_in()) {
         redirect_to(root_path('/staff/login.php'));
     }else {
-        
+
     }
 }
+
+function login_required_public() {
+    global $session;
+    if(!$session->is_logged_in()) {
+        redirect_to(root_path('/welcome.php'));
+    }else {
+
+    }
+}
+
 function display_errors($errors=array()) {
   $output = '';
   if(!empty($errors)) {

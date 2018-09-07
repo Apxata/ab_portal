@@ -1,5 +1,5 @@
 <?php 
-require_once('../../private/initialize.php');
+require_once('../private/initialize.php');
 
 $page_title = 'Страница входа';
 
@@ -53,11 +53,11 @@ $password = '';
     }
 
        
-include(SHARED_PATH . '/staff_header.php'); 
+include(SHARED_PATH . '/public_header.php');
 
 $smarty = new Smarty;
 $smarty->assign('user', $email);
-$smarty->display(PUBLIC_PATH . ('/tpls/staff/login.tpl'));
+$smarty->display(PUBLIC_PATH . ('/tpls/public/welcome.tpl'));
 
-include(SHARED_PATH . '/staff_footer.php'); 
+include(SHARED_PATH . '/public_footer.php');
 

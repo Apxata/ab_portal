@@ -25,6 +25,7 @@
                        <div class="collapse navbar-collapse" id="collapse">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="index.php">Главная</a></li>
+                                <li class=""><a href="logout.php">Выход</a></li>
                             </ul>
                             <form class="navbar-form navbar-left">
                                 <div class="form-group">

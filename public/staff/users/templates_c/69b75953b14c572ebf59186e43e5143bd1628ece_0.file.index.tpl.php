@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-07 08:27:19
+/* Smarty version 3.1.32, created on 2018-09-07 10:04:09
   from 'C:\WinNMP\WWW\albion\public\tpls\staff\users\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b923667ca4df2_12464899',
+  'unifunc' => 'content_5b924d19a44540_17965174',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '69b75953b14c572ebf59186e43e5143bd1628ece' => 
     array (
       0 => 'C:\\WinNMP\\WWW\\albion\\public\\tpls\\staff\\users\\index.tpl',
-      1 => 1534876279,
+      1 => 1536314647,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b923667ca4df2_12464899 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b924d19a44540_17965174 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="main">
     <div class="content container">
         <div class="row">
@@ -36,7 +36,7 @@ function content_5b923667ca4df2_12464899 (Smarty_Internal_Template $_smarty_tpl)
             <th>id</th>
             <th>Логин(почта)</th>
             <th>Дата регистрации</th>
-            <th>Имя </th>
+            <th>Никнейм </th>
             <th>Фамилия</th>
             <th>Удален</th>
             <th>Редактировать</th>
@@ -53,7 +53,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['user']->value) {
 </td>
             <td><?php echo $_smarty_tpl->tpl_vars['user']->value['reg_date'];?>
 </td>
-            <td><?php echo $_smarty_tpl->tpl_vars['user']->value['first_name'];?>
+            <td><?php echo $_smarty_tpl->tpl_vars['user']->value['nickname'];?>
 </td>
             <td><?php echo $_smarty_tpl->tpl_vars['user']->value['last_name'];?>
 </td>

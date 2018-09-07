@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 -- Дамп данных таблицы blog.users: ~0 rows (приблизительно)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`id`, `email`, `hashed_password`, `reg_date`, `first_name`, `last_name`, `deleted`) VALUES
+INSERT INTO `users` (`id`, `email`, `hashed_password`, `reg_date`, nickname, `last_name`, `deleted`) VALUES
 	(1, 'apxata@gmail.com', '$2y$10$E2arR9d7kS6rH64oCgE5deITM4n3pJ/s1Jus5/OkrGctRyAuD1Nhm', '2018-08-01 09:26:19', '', '', 0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 

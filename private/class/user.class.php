@@ -10,7 +10,7 @@ class User  {
     public $password;
     public $confirm_password;
     public $reg_date;
-    public $first_name;
+    public $nickname;
     public $last_name;
     public $deleted;
     protected $password_required = true;
@@ -38,10 +38,10 @@ class User  {
         } else {
             $this->reg_date = ''; 
         }
-        if (isset($args['first_name'])) {
-            $this->first_name = $args['first_name'];
+        if (isset($args['nickname'])) {
+            $this->nickname = $args['nickname'];
         } else {
-            $this->first_name = ''; 
+            $this->nickname = '';
         }
         if (isset($args['last_name'])) {
             $this->last_name = $args['last_name'];
@@ -61,6 +61,7 @@ class User  {
         if(!isset($this->id)){
             $this->id = 0;
         }
+//        ПРОВЕРКА ПОЧТЫ
         if(is_blank($this->email)) {
             $this->errors[] = "Почта не может быть пустой";
         }elseif (!has_length($this->email, array('max' => 255))) {
@@ -69,11 +70,17 @@ class User  {
             $this->errors[] = "Почта неверного формата";
         } elseif (!has_unique_email($this->email, $this->id)) {
             $this->errors[] = "Почта уже используется";
-        }     
-             
-        
+        }
+//        ПРОВЕРКА НИКА
+        if(is_blank($this->nickname)) {
+            $this->errors[] = "Ник не может быть пустой";
+        }elseif (!has_length($this->nickname, array('max' => 255))) {
+            $this->errors[] = "Ник не может быть длинее 255 символов";
+        }elseif (!preg_match('/^[A-Z0-9]+$/i', $this->nickname)) {
+            $this->errors[] = "Ник может содержать только латинские буквы и цфры";
+        }
+//        ПРОВЕРКА ПАРОЛЯ
         if($this->password_required){
-
             if(is_blank($this->password)) {
                 $this->errors[] = "пароль не может быть пустым";
             } elseif (!has_length($this->password, array('min' => 8))) {
@@ -148,7 +155,7 @@ class User  {
     }
 
     public function verify_pas($password){
-        return password_verify($password, $this->$hashed_password);
+        return password_verify($password, $this->hashed_password);
     }
 
     public static function find_all_users() {
@@ -171,14 +178,16 @@ class User  {
                 "UPDATE users SET  
                 email = :email, 
                 hashed_password = :hashed_password, 
+                nickname = :nickname,
                 deleted = :deleted 
                 WHERE id = :id
                 LIMIT 1 "
             );
 
-            $result = $sth->execute([
+            $sth->execute([
                 'email' => $this->email,
                 'hashed_password' => $this->hashed_password,
+                'nickname' => $this->nickname,
                 'deleted' => $this->deleted,
                 'id' => $this->id
             ]);
@@ -200,7 +209,7 @@ class User  {
                 LIMIT 1 "
             );
 
-            $result = $sth->execute([
+            $sth->execute([
                 'email' => $this->email,
                 'deleted' => $this->deleted,
                 'id' => $this->id
@@ -222,13 +231,13 @@ class User  {
             "INSERT INTO users (
                 email,
                 hashed_password,
-                first_name,
+                nickname,
                 last_name,
                 deleted
             ) values (
                 :email,
                 :hashed_password,
-                :first_name,
+                :nickname,
                 :last_name,
                 :deleted
             )"
@@ -237,7 +246,7 @@ class User  {
         $result = $sth->execute([
             'email' => $this->email,
             'hashed_password' => $this->hashed_password,
-            'first_name' => $this->first_name,
+            'nickname' => $this->nickname,
             'last_name' => $this->last_name,
             'deleted' => $this->deleted
         ]);
