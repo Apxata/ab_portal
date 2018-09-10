@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-07 07:50:42
+/* Smarty version 3.1.32, created on 2018-09-10 17:37:12
   from 'C:\WinNMP\WWW\albion\public\tpls\staff\articles\edit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b922dd21c59d5_54145986',
+  'unifunc' => 'content_5b96abc860b589_95436370',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3406fca4577d3d8b0c4038aaad7c76bee7079086' => 
     array (
       0 => 'C:\\WinNMP\\WWW\\albion\\public\\tpls\\staff\\articles\\edit.tpl',
-      1 => 1534610155,
+      1 => 1536601019,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b922dd21c59d5_54145986 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b96abc860b589_95436370 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="main">
     <div class="content container">
       <div class="row">
@@ -33,11 +33,11 @@ function content_5b922dd21c59d5_54145986 (Smarty_Internal_Template $_smarty_tpl)
               <form action="edit.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['id'];?>
 " method="post">
                     <h2 class="a-title"></h2>
-                    <input name="article[subject]" type="text" class="form-control" placeholder="Тема поста" value="<?php echo $_smarty_tpl->tpl_vars['article']->value['subject'];?>
-">  
+                    <input name="article[subject]" type="text" class="form-control" placeholder="Тема поста" value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['article']->value['subject'], ENT_QUOTES, 'UTF-8', true);?>
+">
                     <div class="a-content">
-                        <textarea id="editor" name="article[full_text]" class="form-control" rows="20" cols="80" placeholder="Ваш текст"><?php echo $_smarty_tpl->tpl_vars['article']->value['full_text'];?>
-</textarea>             
+                        <textarea id="editor" name="article[full_text]" class="form-control" rows="20" cols="80" placeholder="Ваш текст"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['article']->value['full_text'], ENT_QUOTES, 'UTF-8', true);?>
+</textarea>
                         <hr>
                         <p>Видимость</p>
                         <label class="radio-inline">

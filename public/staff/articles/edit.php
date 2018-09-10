@@ -20,12 +20,12 @@ if(is_post_request()) {
 
   // Save record using post parameters
   $args = $_POST['article'];
-  $article = new Article($args);  
+  $article = new Article($args);
   $result = $article->update($id);
   
   if($result === true) {
     $_SESSION['message'] = 'Статья успешно отредактирована';
-    redirect_to('articles.php');
+    redirect_to('index.php');
   } else {
     // show errors 
     $_SESSION['message'] = 'Что то пошло не так';
@@ -41,7 +41,7 @@ include(SHARED_PATH . '/staff_header.php');
 
 $smarty = new Smarty;
 $smarty->assign('article', $article);
-$smarty->display(PUBLIC_PATH . ('/tpls/staff/articles/edit.tpl'));
+$smarty->display(PUBLIC_PATH . ('staff/tpls/articles/edit.tpl'));
 
 include(SHARED_PATH . '/staff_footer.php'); 
 

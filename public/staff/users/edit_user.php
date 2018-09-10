@@ -37,7 +37,7 @@
  //Подключаем шаблонизатор СМАРТИ
  $smarty = new Smarty;
  $smarty->assign('user', $user);
- $smarty->display(PUBLIC_PATH . ('/tpls/staff/users/edit_user.tpl'));
+ $smarty->display(PUBLIC_PATH . ('/staff/tpls/users/edit_user.tpl'));
  
  //подключаем футер
  include(SHARED_PATH . '/staff_footer.php'); 

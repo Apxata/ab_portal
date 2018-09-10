@@ -23,6 +23,6 @@ if(is_post_request()) {
  include(SHARED_PATH . '/staff_header.php'); 
 
  $smarty = new Smarty;
- $smarty->display(PUBLIC_PATH . ('/tpls/staff/articles/new_article.tpl'));
+ $smarty->display(PUBLIC_PATH . ('/staff/tpls/articles/new_article.tpl'));
        
  include(SHARED_PATH . '/staff_footer.php'); 

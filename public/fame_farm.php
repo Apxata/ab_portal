@@ -19,4 +19,4 @@ foreach ($fame as &$f){
 include (SHARED_PATH . '/public_header.php');
 $smarty = new Smarty;
 $smarty->assign('fames', $fame);
-$smarty->display('tpls/public/fame_farm.tpl');
+$smarty->display('tpls/fame_farm.tpl');

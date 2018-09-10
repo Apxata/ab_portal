@@ -24,7 +24,8 @@
     $article = Article::find_article_by_id($article_id);
   
     $Parsedown = new Parsedown();
-        $article['full_text'] =  nl2br($Parsedown->text($article['full_text']));
+    $Parsedown->setSafeMode(true);
+        $article['full_text'] =  nl2br($Parsedown->line($article['full_text']));
 
     // Пагинация для комментов
     
@@ -47,6 +48,6 @@
 
     include(SHARED_PATH . '/public_header.php');
 
-    $smarty->display(PUBLIC_PATH . ('/tpls/public/show.tpl'));
+    $smarty->display(PUBLIC_PATH . ('/tpls/show.tpl'));
     
     include(SHARED_PATH . '/public_footer.php');

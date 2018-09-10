@@ -28,8 +28,9 @@ $articles = Article::find_all_articles_per_page($per_page, $offset);
 
 // Обрабатываем текст, чтобы показывал разметку маркдаун
 $Parsedown = new Parsedown();
+$Parsedown->setSafeMode(true);
 foreach ($articles as &$a) {
-    $a['full_text'] =  nl2br($Parsedown->text($a['full_text']));
+    $a['full_text'] =  nl2br($Parsedown->line($a['full_text']));
 }
 //  Формирование страницы для отображения
 
@@ -39,7 +40,7 @@ include(SHARED_PATH . '/staff_header.php');
 //Подключаем шаблонизатор СМАРТИ
 $smarty = new Smarty;
 $smarty->assign('articles', $articles);
-$smarty->display(PUBLIC_PATH . ('/tpls/staff/articles/index.tpl'));
+$smarty->display(PUBLIC_PATH . ('/staff/tpls/articles/index.tpl'));
 
 //подключаем футер
 include(SHARED_PATH . '/staff_footer.php'); 

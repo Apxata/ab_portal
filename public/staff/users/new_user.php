@@ -32,7 +32,7 @@
     if(isset($user->errors)){
      $smarty->assign('errors', $user->errors );
     }
- $smarty->display(PUBLIC_PATH . ('/tpls/staff/users/new_user.tpl'));
+ $smarty->display(PUBLIC_PATH . ('/staff/tpls/users/new_user.tpl'));
  
  //подключаем футер
  include(SHARED_PATH . '/staff_footer.php'); 

@@ -34,6 +34,10 @@ h2 {
     line-height: 1.5;
 }
 
+.a-content img {
+    max-width: 100%;
+}
+
 .a-footer {
     margin-top: 3em;
     margin-bottom: 2em;
@@ -105,5 +109,9 @@ h2 {
 
 .visible .show {
     font-weight: bold;
+}
+
+.site-heading .subheading {
+    font-size: xx-large;
 }
 

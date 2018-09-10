@@ -9,9 +9,9 @@
                
               <form action="edit.php?id={$article.id}" method="post">
                     <h2 class="a-title"></h2>
-                    <input name="article[subject]" type="text" class="form-control" placeholder="Тема поста" value="{$article.subject}">  
+                    <input name="article[subject]" type="text" class="form-control" placeholder="Тема поста" value="{$article.subject|escape}">
                     <div class="a-content">
-                        <textarea id="editor" name="article[full_text]" class="form-control" rows="20" cols="80" placeholder="Ваш текст">{$article.full_text}</textarea>             
+                        <textarea id="editor" name="article[full_text]" class="form-control" rows="20" cols="80" placeholder="Ваш текст">{$article.full_text|escape}</textarea>
                         <hr>
                         <p>Видимость</p>
                         <label class="radio-inline">

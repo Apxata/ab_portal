@@ -30,7 +30,7 @@ $smarty = new Smarty;
 if(isset($user->errors)){
     $smarty->assign('errors', $user->errors );
 }
-$smarty->display(PUBLIC_PATH . ('/tpls/public/registration.tpl'));
+$smarty->display(PUBLIC_PATH . ('/tpls/registration.tpl'));
 
 //подключаем футер
 include(SHARED_PATH . '/public_footer.php');

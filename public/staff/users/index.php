@@ -15,7 +15,7 @@ include(SHARED_PATH . '/staff_header.php');
 //Подключаем шаблонизатор СМАРТИ
 $smarty = new Smarty;
 $smarty->assign('users', $users);
-$smarty->display(PUBLIC_PATH . ('/tpls/staff/users/index.tpl'));
+$smarty->display(PUBLIC_PATH . ('/staff/tpls/users/index.tpl'));
 
 //подключаем футер
 include(SHARED_PATH . '/staff_footer.php'); 
