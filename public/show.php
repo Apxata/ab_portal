@@ -10,14 +10,16 @@
 
     if (is_post_request()) {
          // создаем новый комент
-    $text_comment = $_POST['comment'];
-    $user_id = (int) $session->user_id;
-    
-    $comment = new Comment($user_id, $article_id, $text_comment, $deleted);
-    $result = $comment->create();
-    
+        $text_comment = $_POST['comment'];
+        $user_id = (int) $session->user_id;
+
+        $comment = new Comment($user_id, $article_id, $text_comment, $deleted);
+        $result = $comment->create();
+        if($result) {
+          redirect_to("show.php?article_id=$article_id");
+        }
     } else {
-    // $article = new Article;
+
     }
 
     // Ищем статью по айди 
@@ -42,7 +44,7 @@
 
     // провряем есть ли айди у пользователя, тогда показывает форму ответа.
     // если нет говорим что нужно залогиниться.
-    if(isset($session)){
+    if($session->is_logged_in()){
         $smarty->assign('session', $session);  
     }    
 

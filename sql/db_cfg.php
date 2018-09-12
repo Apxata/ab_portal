@@ -6,9 +6,9 @@
 // 3. Unique credentials if working with multiple developers
 
 define("DB_SERVER", "localhost");
-define("DB_HOST_AND_NAME", "mysql:host=localhost;dbname=blog");
-define("DB_USER", "blouser");
-define("DB_PASS", "\"\WAS%pl4ALu#):");
-define("DB_NAME", "blog");
+define("DB_HOST_AND_NAME", "mysql:host=localhost;dbname=albion");
+define("DB_USER", "albionuser");
+define("DB_PASS", "WAS%pl4ALu#):");
+define("DB_NAME", "albion");
 
 ?>

@@ -9,18 +9,23 @@
                     <div class="a-footer"></div>
             </div>  <!-- article -->
             {if isset($session)}
-            <form action="show.php?article_id={$article_id}" method="post">
-            <textarea name=comment class="form-control" rows="1"></textarea>    
-            <button type="submit" class="btn btn-default">Отправить</button>
-            </form>
+                <h3>Введите ваш комментарий</h3>
+                <form action="show.php?article_id={$article_id}" method="post">
+                <textarea name=comment class="form-control" rows="1"></textarea>
+                <button type="submit" class="btn btn-danger">Отправить</button>
+                </form>
+            {else}
+                <a href="welcome.php">Войдите, если хотите оставить коммент</a>
+                <hr>
             {/if}
+
             <!-- вывод комментов  -->
             {foreach $comments as $comment} 
             <div class="panel panel-primary">
-            <div class="panel-heading">  {$comment['email']} </div>
+            <div class="panel-heading">  {$comment['nickname']} : {$comment['date_create']} </div>
             <div class="panel-body"> {$comment['comment']}</div>
             </div>
-            {/foreach}              
+            {/foreach}
             </div><!-- comments    -->
           
          </div>

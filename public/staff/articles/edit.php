@@ -41,7 +41,7 @@ include(SHARED_PATH . '/staff_header.php');
 
 $smarty = new Smarty;
 $smarty->assign('article', $article);
-$smarty->display(PUBLIC_PATH . ('staff/tpls/articles/edit.tpl'));
+$smarty->display(PUBLIC_PATH . ('/staff/tpls/articles/edit.tpl'));
 
 include(SHARED_PATH . '/staff_footer.php'); 
 
