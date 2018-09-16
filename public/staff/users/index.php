@@ -1,16 +1,16 @@
-<?php 
-    require_once('../../../private/initialize.php'); 
-    login_required();
-    $page_title = 'Статьи'; 
+<?php
+require_once('../../../private/initialize.php');
+login_required();
+$page_title = 'Статьи';
 
-    //ищем всех пользователей
-    $users = User::find_all_users();
-    
-    
- //  ----   ПОДКЛЮЧАЕМ ОТОБРАЖЕНИЕ СТРАНИЦЫ
+//ищем всех пользователей
+$users = User::find_all_users();
 
- //подключаем заголовок
-include(SHARED_PATH . '/staff_header.php'); 
+
+//  ----   ПОДКЛЮЧАЕМ ОТОБРАЖЕНИЕ СТРАНИЦЫ
+
+//подключаем заголовок
+include(SHARED_PATH . '/staff_header.php');
 
 //Подключаем шаблонизатор СМАРТИ
 $smarty = new Smarty;

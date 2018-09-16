@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-07 08:56:41
-  from 'c:\winnmp\www\albion\public\tpls\public\fame_all.tpl' */
+/* Smarty version 3.1.32, created on 2018-09-16 14:41:51
+  from 'C:\WinNMP\WWW\albion\public\tpls\fame\fame_all.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b923d4933ab98_35171330',
+  'unifunc' => 'content_5b9e6baf7e0b33_57371315',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'e08f4cb48d96f050ed3cfe8d3392e585a08e9468' => 
+    '0e8a11479ce483ff75bb82166bbbca98f7b20809' => 
     array (
-      0 => 'c:\\winnmp\\www\\albion\\public\\tpls\\public\\fame_all.tpl',
+      0 => 'C:\\WinNMP\\WWW\\albion\\public\\tpls\\fame\\fame_all.tpl',
       1 => 1536310598,
       2 => 'file',
     ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b923d4933ab98_35171330 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9e6baf7e0b33_57371315 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="main">
     <div class="content container">
         <div class="row">

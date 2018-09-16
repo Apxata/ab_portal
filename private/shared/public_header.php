@@ -24,10 +24,10 @@
                            <!-- navbar header  -->
                        <div class="collapse navbar-collapse" id="collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.php">Главная</a></li>
-                                <li class=""><a href="articles.php">Статьи</a></li>
-                                <li class=""><a href="fame_farm.php">Фейм фарм</a></li>
-                                <li class=""><a href="logout.php">Выход</a></li>
+                                <li class="active"><a href="<?php echo WWW_ROOT ; ?>/index.php">Главная</a></li>
+                                <li class=""><a href="<?php echo WWW_ROOT ; ?>/articles.php">Статьи</a></li>
+                                <li class=""><a href="<?php echo CONTROLLER_PATH . "/fame" ?>/fame_farm.php">Фейм фарм</a></li>
+                                <li class=""><a href="<?php echo WWW_ROOT ; ?>/logout.php">Выход</a></li>
                             </ul>
                             <form class="navbar-form navbar-left">
                                 <div class="form-group">
