@@ -75,7 +75,7 @@ class Fame
     public function get_all_rounds_fame_by_user_id()
     {
         $user_id = $this->user_id;
-        $sth = $this->connection->prepare("SELECT * FROM fame_round WHERE user_id = :user_id ");
+        $sth = $this->connection->prepare("SELECT * FROM fame_round WHERE user_id = :user_id ORDER BY id DESC ");
         $sth->execute([
             'user_id' => $user_id
         ]);
@@ -214,8 +214,9 @@ class Fame
         $sth->execute([
             'user_id' => $user_id
         ]);
-        $result = array_shift($sth->fetchAll());
-        return current($result);
+        $result = ($sth->fetchAll());
+        $result = array_shift ($result);
+        return $result[0];
     }
 
     public function count_rows_of_last_round_fame()
@@ -227,7 +228,8 @@ class Fame
             'user_id' => $user_id,
             'round' => $round
         ]);
-        $result = array_shift($sth->fetchAll());
+        $result = ($sth->fetchAll());
+        $result = array_shift ($result);
         return $result[0];
     }
 

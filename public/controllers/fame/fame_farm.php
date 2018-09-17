@@ -32,7 +32,7 @@ if (isset($_POST["submit"])) {
 $fame = new Fame($fame);
 $get_fame = $fame->find_all_by_last_fame_round_counter();
 $get_round_fame = $fame->get_all_rounds_fame_by_user_id();
-
+//test($get_fame);
 foreach ($get_fame as &$f) {
     $f['timespent'] = round($f['timespent'] / 60);
 }
