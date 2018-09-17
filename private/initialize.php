@@ -19,11 +19,11 @@
     require_once('singletone.db.php');
     require_once('validation_functions.php');
     require_once('status_error_functions.php');
-    require_once('test.php');
+#    require_once('test.php');
 
     // CLASSES
     require_once('class/article.class.php');
-    require_once('class/smarty/smarty.class.php');
+    require_once('class/smarty/Smarty.class.php');
     require_once('class/comment.class.php');
     require_once('class/user.class.php');
     require_once('class/pagination.class.php');
