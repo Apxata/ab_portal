@@ -29,6 +29,7 @@
     require_once('class/pagination.class.php');
     require_once('class/session.class.php');
     require_once('class/fame.class.php');
+    require_once('class/access.class.php');
 
     $session = new Session;
 
