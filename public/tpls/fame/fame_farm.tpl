@@ -72,7 +72,7 @@
                                 <td>{$round_fame.fame_per_round}</td>
                                 <td>{$round_fame.fame_per_hour}</td>
                                 <td>{$round_fame.total_timespent}</td>
-                                <td><a href="fame_round_info.php?id={$round_fame.id}">Подробнее</a></td>
+                                <td><a href="fame_round_info.php?round={$round_fame.round}">Подробнее</a></td>
                             </tr>
                         {/foreach}
                     </table>

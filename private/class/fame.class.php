@@ -57,6 +57,21 @@ class Fame
         return array_shift($result);
     }
 
+    public function find_all_fame_by_round($round)
+    {
+        $sth = $this->connection->prepare("
+            SELECT * FROM fame WHERE round = :round and user_id = :user_id  
+        ");
+        $sth->execute([
+            'round' => $round,
+            'user_id' => $this->user_id
+
+        ]);
+        $result = $sth->fetchAll();
+
+        return ($result);
+    }
+
     public function get_all_rounds_fame_by_user_id()
     {
         $user_id = $this->user_id;
