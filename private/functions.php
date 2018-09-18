@@ -46,10 +46,21 @@ function nl2br2($string)
     return $string;
 }
 
-function check_acc_lvl($access_lvl, $access_lvl_required){
-    If($access_lvl >= $access_lvl_required){
+function check_acc_lvl($access_lvl, $access_lvl_required)
+{
+    If ($access_lvl >= $access_lvl_required) {
         return true;
-    }else{
+    } else {
         return false;
     }
+}
+
+function test($a)
+{
+    echo "<pre>";
+    print_r($a);
+    echo "<hr>";
+    var_dump($a);
+    echo "</pre>";
+    die;
 }
