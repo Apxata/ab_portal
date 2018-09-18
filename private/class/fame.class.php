@@ -215,7 +215,7 @@ class Fame
             'user_id' => $user_id
         ]);
         $result = ($sth->fetchAll());
-        $result = array_shift ($result);
+        $result = array_shift($result);
         return $result[0];
     }
 
@@ -229,7 +229,7 @@ class Fame
             'round' => $round
         ]);
         $result = ($sth->fetchAll());
-        $result = array_shift ($result);
+        $result = array_shift($result);
         return $result[0];
     }
 
@@ -258,4 +258,5 @@ class Fame
             return false;
         }
     }
+
 }

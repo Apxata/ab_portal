@@ -3,14 +3,14 @@
         <div class="row">
             <div class="redaktor col-md-8 col-md-offset-1">
                 <h2>Добавление нового пользователя </h2>
-
+                <div class="error_warning">
                 <!-- выводим сообщение об ошибках если есть  -->
                 {if isset($errors)}
                     {foreach $errors as $er}
-                        {$er}
+                        <div class="alert alert-danger" role="alert">{$er}</br></div>
                     {/foreach}
                 {/if}
-
+                </div>
                 <form class="form-horizontal" action="registration.php" method="post">
                     <h2 class="a-title"></h2>
                     <div class="form-group">

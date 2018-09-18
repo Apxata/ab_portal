@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 18:56:09
+/* Smarty version 3.1.32, created on 2018-09-18 10:10:11
   from 'C:\WinNMP\WWW\albion\public\tpls\registration.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b96be49ee98f8_72627219',
+  'unifunc' => 'content_5ba0cf03138154_31169038',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '42ab182b38ecd88b739e4e444457f15cc3539799' => 
     array (
       0 => 'C:\\WinNMP\\WWW\\albion\\public\\tpls\\registration.tpl',
-      1 => 1536351923,
+      1 => 1537265388,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b96be49ee98f8_72627219 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ba0cf03138154_31169038 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="main">
     <div class="content container">
         <div class="row">
             <div class="redaktor col-md-8 col-md-offset-1">
                 <h2>Добавление нового пользователя </h2>
-
+                <div class="error_warning">
                 <!-- выводим сообщение об ошибках если есть  -->
                 <?php if (isset($_smarty_tpl->tpl_vars['errors']->value)) {?>
                     <?php
@@ -34,14 +34,14 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['er']->value) {
 ?>
-                        <?php echo $_smarty_tpl->tpl_vars['er']->value;?>
-
+                        <div class="alert alert-danger" role="alert"><?php echo $_smarty_tpl->tpl_vars['er']->value;?>
+</br></div>
                     <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <?php }?>
-
+                </div>
                 <form class="form-horizontal" action="registration.php" method="post">
                     <h2 class="a-title"></h2>
                     <div class="form-group">
