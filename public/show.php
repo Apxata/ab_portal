@@ -3,6 +3,11 @@
     // проверка на передачу айди статьи
     if (isset($_GET['article_id'])){
         $article_id = (int) $_GET['article_id'];
+        $article = Article::find_article_by_id_and_access_id($article_id);
+        // ищем по хешу
+    }elseif (isset($_GET['article_hash'])){
+        $article_hash = h($_GET['article_hash']);
+        $article = Article::find_article_by_hash($article_hash);
     } else {
         redirect_to('articles.php');
     }
@@ -23,7 +28,7 @@
     }
 
     // Ищем статью по айди 
-    $article = Article::find_article_by_id_and_access_id($article_id);
+
     if(!empty($article)) {
 
     $Parsedown = new Parsedown();

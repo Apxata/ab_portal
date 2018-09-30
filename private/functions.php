@@ -64,3 +64,22 @@ function test($a)
     echo "</pre>";
     die;
 }
+
+function random16bytes()
+{
+    try {
+        $string = random_bytes(16);
+    } catch (TypeError $e) {
+        // Well, it's an integer, so this IS unexpected.
+        die("An unexpected error has occurred");
+    } catch (Error $e) {
+        // This is also unexpected because 32 is a reasonable integer.
+        die("An unexpected error has occurred");
+    } catch (Exception $e) {
+        // If you get this message, the CSPRNG failed hard.
+        die("Could not generate a random string. Is our OS secure?");
+    }
+    $hash_link = bin2hex($string);
+    return $hash_link;
+
+}

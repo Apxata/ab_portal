@@ -11,6 +11,7 @@ class Article
     public $full_text;
     public $subject;
     public $visible;
+    public $access_via_link = 1;
     public $connection;
 
     public $errors = [];
@@ -24,6 +25,7 @@ class Article
         (isset($args['full_text'])) ? $this->full_text = $args['full_text'] : $this->full_text = '';
         (isset($args['subject'])) ? $this->subject = $args['subject'] : $this->subject = '';
         (isset($args['visible'])) ? $this->visible = $args['visible'] : $this->visible = '';
+        (isset($args['access_via_link'])) ? $this->access_via_link = $args['access_via_link'] : $this->access_via_link = 1;
         $this->connection = DB::get_connect();
     }
 
@@ -106,6 +108,9 @@ class Article
         if (!empty($this->errors)) {
             return false;
         }
+        if ($this->access_via_link == 2) {
+
+        }
 
         $sth = $this->connection->prepare(
             "INSERT INTO articles (
@@ -136,7 +141,7 @@ class Article
 
     public function update($id)
     {
-
+//        валидируем
         $this->validate();
         if (!empty($this->errors)) {
             return false;
@@ -157,6 +162,48 @@ class Article
         ]);
 
         return !isset($sth->errorInfo()[2]) ? true : $sth->errorInfo()[2];
+    }
+
+    public static function update_article_access($id, $access_via_id) {
+        $static_connection = DB::get_connect();
+
+        if($access_via_id == 1) {
+            $sth = $static_connection->prepare(
+                "UPDATE articles SET access_via_id = 1 WHERE id = :id LIMIT 1 "
+            );
+
+            $sth->execute([
+                'id' => $id
+            ]);
+
+            return !isset($sth->errorInfo()[2]) ? true : $sth->errorInfo()[2];
+        }else{
+
+        $hash_link = random16bytes();
+        $sth = $static_connection->prepare(
+            "UPDATE articles SET access_via_id = :access_via_id, 
+             article_hash = :article_hash WHERE id = :id LIMIT 1 "
+        );
+
+        $sth->execute([
+            'id' => $id,
+            'access_via_id' => $access_via_id,
+            'article_hash' => $hash_link
+        ]);
+
+        return !isset($sth->errorInfo()[2]) ? true : $sth->errorInfo()[2];
+        }
+    }
+
+    public static function find_article_by_hash($article_hash){
+        $static_connection = DB::get_connect();
+
+        $sth = $static_connection->prepare(
+            "SELECT * FROM articles WHERE article_hash = :article_hash AND visible = 1 "
+        );
+        $sth->execute(['article_hash' => $article_hash]);
+        $article = $sth->fetchAll();
+        return array_shift($article);
     }
 
     protected function validate()
