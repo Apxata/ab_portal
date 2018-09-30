@@ -58,5 +58,4 @@
     }else {
         $_SESSION = "Статья не найдена";
         redirect_to("articles.php");
-
     }
