@@ -71,6 +71,7 @@ include(SHARED_PATH . '/staff_header.php');
 
 $smarty = new Smarty;
 $smarty->assign('article', $article);
+$smarty->assign('server_name', DOMAIN_NAME);
 $smarty->display(PUBLIC_PATH . ('/staff/tpls/articles/edit.tpl'));
 
 include(SHARED_PATH . '/staff_footer.php'); 

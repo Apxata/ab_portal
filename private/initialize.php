@@ -5,7 +5,7 @@
     define("PUBLIC_PATH", PROJECT_PATH . '/public');
     define("SHARED_PATH", PRIVATE_PATH . '/shared');
     define("PUBLIC_TPLS_PATH", PUBLIC_PATH . '/tpls');
-
+    define("DOMAIN_NAME", $_SERVER['HTTP_HOST']);
 
 //    $public_end = strpos($_SERVER['SCRIPT_NAME'], '/public') + 7;
 //    $doc_root = substr($_SERVER['SCRIPT_NAME'], 0, $public_end);

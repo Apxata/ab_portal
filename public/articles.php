@@ -1,5 +1,4 @@
 <?php require_once('../private/initialize.php'); 
- 
 //ищем статьи постранично
 if (isset($_GET['page'])){
     $current_page = $_GET['page'];

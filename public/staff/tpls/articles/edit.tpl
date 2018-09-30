@@ -15,7 +15,7 @@
                     Изм. доступ</button>
                 </form>
                 <div class="full-link">
-                    {if $article.access_via_id eq 2 } http://albion.test/show.php?article_hash={$article.article_hash} {/if}
+                    {if $article.access_via_id eq 2 } {$server_name}/show.php?article_hash={$article.article_hash} {/if}
                 </div>
             </div>
             <div class="row">

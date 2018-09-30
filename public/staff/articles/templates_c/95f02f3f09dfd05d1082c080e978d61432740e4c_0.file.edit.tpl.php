@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-30 17:49:37
+/* Smarty version 3.1.32, created on 2018-09-30 18:41:22
   from 'C:\WinNMP\WWW\albion\public\staff\tpls\articles\edit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5bb10cb179c076_27437050',
+  'unifunc' => 'content_5bb118d21c2456_30130158',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '95f02f3f09dfd05d1082c080e978d61432740e4c' => 
     array (
       0 => 'C:\\WinNMP\\WWW\\albion\\public\\staff\\tpls\\articles\\edit.tpl',
-      1 => 1538329774,
+      1 => 1538332868,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bb10cb179c076_27437050 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb118d21c2456_30130158 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="main">
     <div class="content container">
         <div class="redaktor col-md-8 col-md-offset-1">
@@ -38,7 +38,8 @@ function content_5bb10cb179c076_27437050 (Smarty_Internal_Template $_smarty_tpl)
                     Изм. доступ</button>
                 </form>
                 <div class="full-link">
-                    <?php if ($_smarty_tpl->tpl_vars['article']->value['access_via_id'] == 2) {?> http://albion.test/show.php?article_hash=<?php echo $_smarty_tpl->tpl_vars['article']->value['article_hash'];?>
+                    <?php if ($_smarty_tpl->tpl_vars['article']->value['access_via_id'] == 2) {?> <?php echo $_smarty_tpl->tpl_vars['server_name']->value;?>
+/show.php?article_hash=<?php echo $_smarty_tpl->tpl_vars['article']->value['article_hash'];?>
  <?php }?>
                 </div>
             </div>
