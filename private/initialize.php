@@ -19,6 +19,7 @@
     require_once('singletone.db.php');
     require_once('validation_functions.php');
     require_once('status_error_functions.php');
+    require_once('random/lib/random.php');
 #    require_once('test.php');
 
     // CLASSES

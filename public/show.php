@@ -23,8 +23,9 @@
     }
 
     // Ищем статью по айди 
-    $article = Article::find_article_by_id($article_id);
-  
+    $article = Article::find_article_by_id_and_access_id($article_id);
+    if(!empty($article)) {
+
     $Parsedown = new Parsedown();
     $Parsedown->setSafeMode(true);
         $article['full_text'] =  nl2br($Parsedown->line($article['full_text']));
@@ -53,3 +54,9 @@
     $smarty->display(PUBLIC_PATH . ('/tpls/show.tpl'));
     
     include(SHARED_PATH . '/public_footer.php');
+
+    }else {
+        $_SESSION = "Статья не найдена";
+        redirect_to("articles.php");
+
+    }
