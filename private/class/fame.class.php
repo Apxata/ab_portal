@@ -137,6 +137,7 @@ class Fame
     public function create()
     {
         $current_round = $this->current_round();
+
         $sth = $this->connection->prepare(
             "INSERT INTO fame (
                 fame, user_id, round
@@ -216,6 +217,9 @@ class Fame
         ]);
         $result = ($sth->fetchAll());
         $result = array_shift($result);
+        if(empty($result[0])){
+            $result[0] = 1;
+        }
         return $result[0];
     }
 
