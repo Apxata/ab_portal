@@ -42,21 +42,6 @@ class Fame
         return $fame->fetchAll();
     }
 
-    static public function find_fame_by_id($id)
-    {
-        $static_connection = DB::get_connect();
-
-        $sth = $static_connection->prepare("
-            SELECT * FROM fame WHERE id = :id ORDER BY fame_time DESC 
-        ");
-        $sth->execute([
-            'id' => $id
-        ]);
-        $result = $sth->fetchAll();
-
-        return array_shift($result);
-    }
-
     public function find_all_fame_by_round($round)
     {
         $sth = $this->connection->prepare("
@@ -122,6 +107,21 @@ class Fame
         return $result;
     }
 
+    public function current_round()
+    {
+        $user_id = $this->user_id;
+        $sth = $this->connection->prepare("SELECT max(round) as round FROM fame_round_counter WHERE user_id = :user_id ");
+        $sth->execute([
+            'user_id' => $user_id
+        ]);
+        $result = ($sth->fetchAll());
+        $result = array_shift($result);
+        if (empty($result[0])) {
+            $result[0] = 1;
+        }
+        return $result[0];
+    }
+
     public function find_all_by_last_fame_round_counter()
     {
         $round = $this->current_round();
@@ -162,24 +162,18 @@ class Fame
         // return !isset($sth->errorInfo()[2]) ?  true : $sth->errorInfo()[2];
     }
 
-    public function create_new_round()
+    public function count_rows_of_last_round_fame()
     {
-        $current_round = $this->current_round();
-        $next_round = $current_round + 1;
-        $sth = $this->connection->prepare(
-            "INSERT INTO fame_round_counter (
-                user_id, round
-            ) values (
-                :user_id , :round
-            )"
-        );
+        $user_id = $this->user_id;
+        $round = $this->current_round();
+        $sth = $this->connection->prepare("SELECT count(*) FROM fame WHERE user_id = :user_id and round = :round ");
         $sth->execute([
-            'user_id' => $this->user_id,
-            'round' => $next_round
+            'user_id' => $user_id,
+            'round' => $round
         ]);
-
-        return !isset($sth->errorInfo()[2]) ? true : $sth->errorInfo()[2];
-
+        $result = ($sth->fetchAll());
+        $result = array_shift($result);
+        return $result[0];
     }
 
     public function fame_count()
@@ -208,35 +202,6 @@ class Fame
         return !isset($sth->errorInfo()[2]) ? true : $sth->errorInfo()[2];
     }
 
-    public function current_round()
-    {
-        $user_id = $this->user_id;
-        $sth = $this->connection->prepare("SELECT max(round) as round FROM fame_round_counter WHERE user_id = :user_id ");
-        $sth->execute([
-            'user_id' => $user_id
-        ]);
-        $result = ($sth->fetchAll());
-        $result = array_shift($result);
-        if(empty($result[0])){
-            $result[0] = 1;
-        }
-        return $result[0];
-    }
-
-    public function count_rows_of_last_round_fame()
-    {
-        $user_id = $this->user_id;
-        $round = $this->current_round();
-        $sth = $this->connection->prepare("SELECT count(*) FROM fame WHERE user_id = :user_id and round = :round ");
-        $sth->execute([
-            'user_id' => $user_id,
-            'round' => $round
-        ]);
-        $result = ($sth->fetchAll());
-        $result = array_shift($result);
-        return $result[0];
-    }
-
     static public function find_2_last_fame($user_id)
     {
         $static_connection = DB::get_connect();
@@ -247,6 +212,26 @@ class Fame
         ]);
         $result = $sth->fetchAll();
         return $result;
+    }
+
+    public function create_new_round()
+    {
+        $current_round = $this->current_round();
+        $next_round = $current_round + 1;
+        $sth = $this->connection->prepare(
+            "INSERT INTO fame_round_counter (
+                user_id, round
+            ) values (
+                :user_id , :round
+            )"
+        );
+        $sth->execute([
+            'user_id' => $this->user_id,
+            'round' => $next_round
+        ]);
+
+        return !isset($sth->errorInfo()[2]) ? true : $sth->errorInfo()[2];
+
     }
 
     public function delete_fame_row($id)
@@ -261,6 +246,35 @@ class Fame
         } else {
             return false;
         }
+    }
+
+    static public function find_fame_by_id($id)
+    {
+        $static_connection = DB::get_connect();
+
+        $sth = $static_connection->prepare("
+            SELECT * FROM fame WHERE id = :id ORDER BY fame_time DESC 
+        ");
+        $sth->execute([
+            'id' => $id
+        ]);
+        $result = $sth->fetchAll();
+
+        return array_shift($result);
+    }
+
+    public static function fame_rating()
+    {
+        $static_connection = DB::get_connect();
+        $sth = $static_connection->prepare(" 
+              SELECT fame_round.id, user_id, round, fame_per_hour, fame_per_round, total_timespent, date, nickname 
+              FROM fame_round JOIN USERS ON (fame_round.user_id = users.id) ORDER BY fame_per_round DESC LIMIT 10
+        ");
+        $sth->execute();
+
+        $result = $sth->fetchAll();
+
+        return $result;
     }
 
 }
