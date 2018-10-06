@@ -268,7 +268,7 @@ class Fame
         $static_connection = DB::get_connect();
         $sth = $static_connection->prepare(" 
               SELECT fame_round.id, user_id, round, fame_per_hour, fame_per_round, total_timespent, date, nickname 
-              FROM fame_round JOIN USERS ON (fame_round.user_id = users.id) ORDER BY fame_per_round DESC LIMIT 20
+              FROM fame_round JOIN users ON (fame_round.user_id = users.id) ORDER BY fame_per_round DESC LIMIT 20
         ");
         $sth->execute();
 
