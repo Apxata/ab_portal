@@ -27,6 +27,7 @@
                                 <li class="active"><a href="<?php echo WWW_ROOT ; ?>/index.php">Главная</a></li>
                                 <li class=""><a href="<?php echo WWW_ROOT ; ?>/articles.php">Статьи</a></li>
                                 <li class=""><a href="<?php echo CONTROLLER_PATH . "/fame" ?>/fame_farm.php">Фейм фарм</a></li>
+                                <li class=""><a href="<?php echo CONTROLLER_PATH . "/fame" ?>/fame_rating.php">Фейм рейтинг</a></li>
                                 <li class=""><a href="<?php echo WWW_ROOT ; ?>/logout.php"><?php if($session->is_logged_in()){echo "Выход";}else{ echo "Вход";}?> </a></li>
                             </ul>
                             <form class="navbar-form navbar-left">

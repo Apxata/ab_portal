@@ -5,6 +5,7 @@
                 <div class="fame_all">
                     <a href="fame_all.php">Все записи по фейму</a>
                 </div>  <!-- user add -->
+                <hr>
                 <!-- FAME MENU ADD -->
                 <div class="fame_menu">
                     <form class="form-inline" action="fame_farm.php" method="post">
@@ -30,7 +31,7 @@
                     </tr>
                     {foreach $fames as $fame}
                         <tr>
-                            <td>{$fame.id}</td>
+                            <td>{$fame.order}</td>
                             <td>{$fame.fame}</td>
                             <td>{$fame.fame_time}</td>
                             <td>{$fame.timespent}</td>

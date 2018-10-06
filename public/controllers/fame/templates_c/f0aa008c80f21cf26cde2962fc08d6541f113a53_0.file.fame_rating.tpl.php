@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-10-04 15:33:18
+/* Smarty version 3.1.32, created on 2018-10-06 08:53:59
   from 'C:\WinNMP\WWW\albion\public\tpls\fame\fame_rating.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5bb632bebfca68_10348034',
+  'unifunc' => 'content_5bb87827edb4f9_65294179',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f0aa008c80f21cf26cde2962fc08d6541f113a53' => 
     array (
       0 => 'C:\\WinNMP\\WWW\\albion\\public\\tpls\\fame\\fame_rating.tpl',
-      1 => 1538667196,
+      1 => 1538815803,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bb632bebfca68_10348034 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb87827edb4f9_65294179 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="main">
     <div class="content container">
         <div class="row">
@@ -43,7 +43,8 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['fame']->value) {
 ?>
                         <tr>
-                            <td></td>
+                            <td><?php echo $_smarty_tpl->tpl_vars['fame']->value['order'];?>
+</td>
                             <td><?php echo $_smarty_tpl->tpl_vars['fame']->value['nickname'];?>
 </td>
                             <td><?php echo $_smarty_tpl->tpl_vars['fame']->value['date'];?>

@@ -16,7 +16,7 @@
                     </tr>
                     {foreach $fames as $fame}
                         <tr>
-                            <td></td>
+                            <td>{$fame.order}</td>
                             <td>{$fame.nickname}</td>
                             <td>{$fame.date}</td>
                             <td>{$fame.total_timespent}</td>
