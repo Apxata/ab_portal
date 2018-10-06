@@ -8,6 +8,7 @@ $num=1;
 foreach ($rating as &$r) {
     $r["order"] = $num;
     ++$num;
+    $r['total_timespent'] = round($r['total_timespent'] / 60);
 }
 
 include(SHARED_PATH . '/public_header.php');
