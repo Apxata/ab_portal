@@ -98,7 +98,8 @@ class Article
             SELECT * FROM articles WHERE visible = 1 and access_via_id = 1 ORDER BY create_date DESC LIMIT ? OFFSET ?
         ');
         $sth->execute([$per_page, $offset]);
-        return $sth->fetchAll();
+        $result = $sth->fetchAll();
+        return $result;
     }
 
     public function create()
