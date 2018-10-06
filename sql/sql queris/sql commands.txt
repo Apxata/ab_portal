@@ -1,0 +1,16 @@
+CREATE TABLE `fame_farm_place` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`place_name` VARCHAR(255) NOT NULL DEFAULT '0',
+	`deleted` TINYINT(2) NOT NULL DEFAULT '0',
+	`user_id_add` TINYINT(5) NOT NULL DEFAULT '0',
+	`date_add` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+;
+
+ALTER TABLE `fame_round`
+	ADD COLUMN `fame_farm_id` TINYINT(4) NULL AFTER `date`;
+
+ALTER TABLE `fame_round`
+	CHANGE COLUMN `fame_farm_id` `fame_farm_place_id` TINYINT(4) NULL DEFAULT NULL AFTER `date`;
