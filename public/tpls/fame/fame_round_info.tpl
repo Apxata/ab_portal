@@ -21,7 +21,6 @@
                     </tr>
                     {foreach $fames as $fame}
                         <tr>
-                            <td>{$fame.number++}</td>
                             <td>{$fame.id}</td>
                             <td>{$fame.fame}</td>
                             <td>{$fame.fame_time}</td>
